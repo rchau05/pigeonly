@@ -1,0 +1,35 @@
+%h4 Thank you! A loan officer will get in contact with you shortly! 
+
+%p
+	%strong ID
+	= @lead.id
+%p
+	%strong First Name:
+	= @lead.last_name 
+%p
+	%strong Last Name:
+	= @lead.first_name 
+%p
+	%strong Email:
+	= @lead.email 
+%p
+	%strong Phone Number:
+	= @lead.phone_number 
+%p
+	%strong Interest Rate:
+	= @lead.interest_rate 
+%p
+	%strong Loan Amount:
+	= @lead.loan_amount 
+%p
+	%strong Down Payment:
+	= @lead.down_payment 
+%p 
+	= link_to "Printable Receipt (PDF)", lead_path(@lead.id, format: "pdf") 
+	= @lead.first_name
+
+= form_tag upload_path, enctype: 'multipart/form-data' do
+	= file_field_tag :file
+	= submit_tag 'Upload file'
+
+%small Built with Ruby on Rails, PostgreSQL, HAML, and SASS, 

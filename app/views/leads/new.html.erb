@@ -1,0 +1,31 @@
+<%= form_for @lead do |lead_form| %>
+
+  <div class="personal-details">
+    <%=lead_form.label(:title, "Title")%>
+    <%=lead_form.select(:title, options_for_select([["Title", "0"], ["Mr.", "Mr."], ["Mrs.", "Mrs."], ["Ms.", "Ms."], ["Dr.", "Dr."], ["Prof.", "Prof."]], selected: "0", disabled: ["0"]), :name => "title") %>
+
+    <%=lead_form.label :first_name, "First Name" %>
+    <%=lead_form.text_field :first_name %>
+
+    <%=lead_form.label :last_name, "Last Name" %>
+    <%=lead_form.text_field :last_name %>
+
+    <%=lead_form.label(:phone_number, "Phone Number")%>
+    <%=lead_form.text_field(:phone_number)%>
+
+    <%=lead_form.label(:email, "Email")%>
+    <%=lead_form.text_field(:email)%>
+  </div>
+  <div class="loan-details">
+    <%=lead_form.label(:interest_rate)%>
+    <%=lead_form.text_field(:interest_rate)%>
+
+    <%=lead_form.label(:loan_amount)%>
+    <%=lead_form.text_field(:loan_amount)%>
+
+    <%=lead_form.label(:down_payment)%>
+    <%=lead_form.text_field(:down_payment)%>
+  </div>
+
+  <%= lead_form.submit('Start Loan Application') %>
+<% end %>
