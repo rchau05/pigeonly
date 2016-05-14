@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160326060319) do
+ActiveRecord::Schema.define(version: 20160404042447) do
 
   create_table "leads", force: :cascade do |t|
     t.string   "encrypted_first_name"
@@ -24,6 +24,10 @@ ActiveRecord::Schema.define(version: 20160326060319) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
     t.string   "encrypted_title"
+    t.string   "pdf_file_name"
+    t.string   "pdf_content_type"
+    t.integer  "pdf_file_size"
+    t.datetime "pdf_updated_at"
   end
 
 end
